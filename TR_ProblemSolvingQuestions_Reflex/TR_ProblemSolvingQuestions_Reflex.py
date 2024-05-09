@@ -11,7 +11,7 @@ def next_button(goto):
         rx.button(
             "Next Question",
             size="3",
-            color_scheme="grass",
+            color_scheme="amber",
             on_click=lambda: rx.redirect(f"/{goto}"),
         ),
     )

@@ -1,3 +1,8 @@
+
+=================================================================================
+APP Description:
+=================================================================================
+
 GOAL:
 The goal of the app is to help the user clarify their thinking through answering problem solving questions from Tony Robbins
 
@@ -22,7 +27,8 @@ In “Awaken the Giant Within“, Robbins also recommends 5 problem-solving ques
 5. How can I enjoy the process while I do what is necessary to make it the way I want it?
 
 =================================================================================
-APP Structure
+APP Structure:
+=================================================================================
 
 A)
 Heading
@@ -52,3 +58,10 @@ Problem (center, different color)
 Questions next to Answers
 Button ("Download TXT, PDF, MD")
 Button ("Restart Exercise")
+
+=================================================================================
+APP ROADMAP:
+=================================================================================
+
+1. Basic functioning app Structure MVP
+2. Create Spanish version
