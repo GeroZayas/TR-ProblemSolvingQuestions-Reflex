@@ -1,0 +1,54 @@
+GOAL:
+The goal of the app is to help the user clarify their thinking through answering problem solving questions from Tony Robbins
+
+VALUE ADDING:
+- Wellness
+- Therapeutic Value
+- Anxiety Reduction
+- Hope providing
+- Reduces effort / hassle (Convenience and Promptness)
+
+VALUE PROP:
+- Solves the problem of finding clarity and empowering meanings and approach to a given problem
+- Benefits the user by conveniently providing them with an easy and beautiful way to access Problem Solving Questions from TR
+- Better than competitors in terms of Web App convenience
+
+Content:
+In “Awaken the Giant Within“, Robbins also recommends 5 problem-solving questions to help you reframe your challenge:
+1. What is great about this problem?
+2. What is not perfect yet?
+3. What am I willing to do to make it the way I want it?
+4. What am I willing to no longer do in order to make it the way I want it?
+5. How can I enjoy the process while I do what is necessary to make it the way I want it?
+
+=================================================================================
+APP Structure
+
+A)
+Heading
+Short explanation of what Problem Solving Questions (PSQ) is from TR
+Button "Start"
+
+B)
+b1. HEADING Question Number 1
+- Text entry for answer
+- Button next
+b1. HEADING Question Number 2 
+- Text entry for answer
+- Button next
+b1. HEADING Question Number 3
+- Text entry for answer
+- Button next 
+b1. HEADING Question Number 4
+- Text entry for answer
+- Button next 
+b1. HEADING Question Number 5
+- Text entry for answer
+- Finish
+
+C)
+Heading Summary
+Problem (center, different color)
+Questions next to Answers
+Button ("Download TXT, PDF, MD")
+Button ("Restart Exercise")
