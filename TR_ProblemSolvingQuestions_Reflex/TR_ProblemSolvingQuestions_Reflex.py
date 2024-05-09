@@ -5,6 +5,18 @@ from rxconfig import config
 import reflex as rx
 
 
+# BUTTONS
+def next_button(goto):
+    return (
+        rx.button(
+            "Next Question",
+            size="3",
+            color_scheme="grass",
+            on_click=lambda: rx.redirect(f"/{goto}"),
+        ),
+    )
+
+
 class State(rx.State):
     """The app state."""
 
@@ -45,12 +57,7 @@ def problem() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/question-1"),
-        ),
+        next_button(goto="question-1"),
         direction="column",
         spacing="4",
     )
@@ -59,17 +66,13 @@ def problem() -> rx.Component:
 def question_1() -> rx.Component:
     return rx.center(
         rx.heading(
-            "I. What is great about this problem?",
+            rx.text("I.", color_scheme="red"),
+            "What is great about this problem?",
             size="8",
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/question-2"),
-        ),
+        next_button(goto="question-2"),
         rx.button(
             "Previous Question",
             color_scheme="mint",
@@ -83,17 +86,13 @@ def question_1() -> rx.Component:
 def question_2() -> rx.Component:
     return rx.center(
         rx.heading(
-            "II. What is not perfect yet?",
+            rx.text("II.", color_scheme="red"),
+            "What is not perfect yet?",
             size="8",
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/question-3"),
-        ),
+        next_button(goto="question-3"),
         rx.button(
             "Previous Question",
             color_scheme="mint",
@@ -107,17 +106,13 @@ def question_2() -> rx.Component:
 def question_3() -> rx.Component:
     return rx.center(
         rx.heading(
-            "II. What is not perfect yet?",
+            rx.text("III.", color_scheme="red"),
+            "What am I willing to do to make it the way I want it?",
             size="8",
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/question-4"),
-        ),
+        next_button(goto="question-4"),
         rx.button(
             "Previous Question",
             color_scheme="mint",
@@ -131,17 +126,13 @@ def question_3() -> rx.Component:
 def question_4() -> rx.Component:
     return rx.center(
         rx.heading(
-            "II. What is not perfect yet?",
+            rx.text("IV.", color_scheme="red"),
+            "What am I willing to no longer do in order to make it the way I want it?",
             size="8",
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/question-5"),
-        ),
+        next_button(goto="question-5"),
         rx.button(
             "Previous Question",
             color_scheme="mint",
@@ -155,17 +146,13 @@ def question_4() -> rx.Component:
 def question_5() -> rx.Component:
     return rx.center(
         rx.heading(
-            "II. What is not perfect yet?",
+            rx.text("V.", color_scheme="red"),
+            "How can I enjoy the process while I do what is necessary to make it the way I want it?",
             size="8",
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Next Question",
-            size="3",
-            color_scheme="amber",
-            on_click=lambda: rx.redirect("/summary"),
-        ),
+        next_button(goto="summary"),
         rx.button(
             "Previous Question",
             color_scheme="mint",
