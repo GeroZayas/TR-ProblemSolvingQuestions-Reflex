@@ -17,6 +17,17 @@ def next_button(goto):
     )
 
 
+def previous_button(goto):
+    return (
+        rx.button(
+            "Previus Question",
+            size="3",
+            color_scheme="crimson",
+            on_click=lambda: rx.redirect(f"/{goto}"),
+        ),
+    )
+
+
 class State(rx.State):
     """The app state."""
 
@@ -73,11 +84,7 @@ def question_1() -> rx.Component:
             align="center",
         ),
         next_button(goto="question-2"),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/problem"),
-        ),
+        previous_button(goto="problem"),
         direction="column",
         spacing="4",
     )
@@ -93,11 +100,7 @@ def question_2() -> rx.Component:
             align="center",
         ),
         next_button(goto="question-3"),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/question-1"),
-        ),
+        previous_button(goto="question-1"),
         direction="column",
         spacing="4",
     )
@@ -113,11 +116,7 @@ def question_3() -> rx.Component:
             align="center",
         ),
         next_button(goto="question-4"),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/question-2"),
-        ),
+        previous_button(goto="question-2"),
         direction="column",
         spacing="4",
     )
@@ -133,11 +132,7 @@ def question_4() -> rx.Component:
             align="center",
         ),
         next_button(goto="question-5"),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/question-3"),
-        ),
+        previous_button(goto="question-3"),
         direction="column",
         spacing="4",
     )
@@ -153,11 +148,7 @@ def question_5() -> rx.Component:
             align="center",
         ),
         next_button(goto="summary"),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/question-4"),
-        ),
+        previous_button(goto="question-4"),
         direction="column",
         spacing="4",
     )
@@ -171,11 +162,7 @@ def summary() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        rx.button(
-            "Previous Question",
-            color_scheme="mint",
-            on_click=lambda: rx.redirect("/question-5"),
-        ),
+        previous_button(goto="question-5"),
         direction="column",
         spacing="4",
     )
