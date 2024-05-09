@@ -20,16 +20,41 @@ def next_button(goto):
 def previous_button(goto):
     return (
         rx.button(
-            "Previus Question",
-            size="3",
-            color_scheme="crimson",
+            "Previous Question",
+            size="2",
+            color_scheme="red",
             on_click=lambda: rx.redirect(f"/{goto}"),
         ),
     )
 
 
+def user_answer_entry(
+    id,
+    name,
+):
+    return rx.text_area(
+        placeholder="Enter answer...",
+        id=f"{id}",
+        name=f"{name}",
+        color_scheme="amber",
+        radius="medium",
+        required=True,
+        size="3",
+    )
+
+
+# ===================================================================
+# STATE of the APP
+# ===================================================================
 class State(rx.State):
     """The app state."""
+
+    problem_text: str = ""
+
+
+# ===================================================================
+# "/" HOME Page
+# ===================================================================
 
 
 def home() -> rx.Component:
@@ -60,6 +85,9 @@ def home() -> rx.Component:
     )
 
 
+# ===================================================================
+# PROBLEM Page
+# ===================================================================
 def problem() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -74,6 +102,9 @@ def problem() -> rx.Component:
     )
 
 
+# ===================================================================
+# Question 1 Page
+# ===================================================================
 def question_1() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -90,6 +121,9 @@ def question_1() -> rx.Component:
     )
 
 
+# ===================================================================
+# Question 2 Page
+# ===================================================================
 def question_2() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -99,6 +133,7 @@ def question_2() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
+        user_answer_entry(id=question_2, name=question_2),
         next_button(goto="question-3"),
         previous_button(goto="question-1"),
         direction="column",
@@ -106,6 +141,9 @@ def question_2() -> rx.Component:
     )
 
 
+# ===================================================================
+# Question 3 Page
+# ===================================================================
 def question_3() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -115,6 +153,7 @@ def question_3() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
+        user_answer_entry(id=question_3, name=question_3),
         next_button(goto="question-4"),
         previous_button(goto="question-2"),
         direction="column",
@@ -122,6 +161,9 @@ def question_3() -> rx.Component:
     )
 
 
+# ===================================================================
+# Question 4 Page
+# ===================================================================
 def question_4() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -131,6 +173,7 @@ def question_4() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
+        user_answer_entry(id=question_4, name=question_4),
         next_button(goto="question-5"),
         previous_button(goto="question-3"),
         direction="column",
@@ -138,6 +181,9 @@ def question_4() -> rx.Component:
     )
 
 
+# ===================================================================
+# Question 5 Page
+# ===================================================================
 def question_5() -> rx.Component:
     return rx.center(
         rx.heading(
@@ -147,6 +193,7 @@ def question_5() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
+        user_answer_entry(id=question_5, name=question_5),
         next_button(goto="summary"),
         previous_button(goto="question-4"),
         direction="column",
@@ -154,6 +201,9 @@ def question_5() -> rx.Component:
     )
 
 
+# ===================================================================
+# Summary Page
+# ===================================================================
 def summary() -> rx.Component:
     return rx.center(
         rx.heading(
