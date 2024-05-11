@@ -188,7 +188,10 @@ def question_2() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="question_2", name="question_2"),
+        rx.text_area(
+            value=TextAreasState.question_2_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_question_2_text,
+        ),
         next_button(goto="question-3"),
         previous_button(goto="question-1"),
         # -----------------
@@ -215,7 +218,10 @@ def question_3() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="question_3", name="question_3"),
+        rx.text_area(
+            value=TextAreasState.question_3_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_question_3_text,
+        ),
         next_button(goto="question-4"),
         previous_button(goto="question-2"),
         # -----------------
@@ -242,7 +248,10 @@ def question_4() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="question_4", name="question_4"),
+        rx.text_area(
+            value=TextAreasState.question_4_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_question_4_text,
+        ),
         next_button(goto="question-5"),
         previous_button(goto="question-3"),
         # -----------------
@@ -269,7 +278,10 @@ def question_5() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="question_5", name="question_5"),
+        rx.text_area(
+            value=TextAreasState.question_5_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_question_5_text,
+        ),
         next_button(goto="summary"),
         previous_button(goto="question-4"),
         # -----------------
