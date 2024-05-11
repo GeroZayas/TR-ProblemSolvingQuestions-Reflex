@@ -50,6 +50,14 @@ class State(rx.State):
     """The app state."""
 
     problem_text: str = ""
+    question_1_text: str = ""
+    question_2_text: str = ""
+    question_3_text: str = ""
+    question_4_text: str = ""
+    question_5_text: str = ""
+
+    def set_text(self, new_text: str):
+        self.text = new_text
 
 
 # ===================================================================
@@ -273,7 +281,6 @@ def summary() -> rx.Component:
             # on_click=...,
         ),
         # flex properties
-        # -----------------
         direction="column",
         spacing="4",
         justify_content="center",
