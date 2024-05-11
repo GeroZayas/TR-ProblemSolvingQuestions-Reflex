@@ -46,7 +46,7 @@ def user_answer_entry(
 # ===================================================================
 # STATE of the APP
 # ===================================================================
-class State(rx.State):
+class TextAreasState(rx.State):
     """The app state."""
 
     problem_text: str = ""
