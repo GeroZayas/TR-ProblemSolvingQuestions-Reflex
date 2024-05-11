@@ -34,12 +34,14 @@ def user_answer_entry(
 ):
     return rx.text_area(
         placeholder="Enter answer...",
-        id=f"{id}",
+        # id=f"{id}",
         name=f"{name}",
         color_scheme="amber",
         radius="medium",
         required=True,
         size="3",
+        # value=id.text,
+        # on_change=TextAreasState.set_text,
     )
 
 
@@ -290,29 +292,60 @@ def summary() -> rx.Component:
         rx.heading(
             "SUMMARY",
             size="8",
-            color_scheme="amber",
+            color_scheme="bronze",
             align="center",
         ),
-        rx.text("Hear goes the summary"),
+        # ====== PROBLEMS AND ANSWERS =======
+        rx.markdown("# PROBLEM:", class_name="text-red-800"),
+        rx.text(TextAreasState.problem_text),
+        rx.markdown(
+            "### What is great about this problem?:", class_name="text-amber-600"
+        ),
+        rx.text(TextAreasState.question_1_text),
+        rx.markdown("### What is not perfect yet?:", class_name="text-amber-600"),
+        rx.text(TextAreasState.question_2_text),
+        rx.markdown(
+            "### What am I willing to do to make it the way I want it?:",
+            class_name="text-amber-600",
+        ),
+        rx.text(TextAreasState.question_3_text),
+        rx.markdown(
+            "### What am I willing to no longer do in order to make it the way I want it?:",
+            class_name="text-amber-600",
+        ),
+        rx.text(TextAreasState.question_4_text),
+        rx.markdown(
+            "### How can I enjoy the process while I do what is necessary to make it the way I want it?:",
+            class_name="text-amber-600",
+        ),
+        rx.text(TextAreasState.question_5_text),
+        # ====== Buttons =======
         previous_button(goto="question-5"),
-        # TODO: Button to save as pdf / txt
         rx.button(
             "Save answers",
             size="2",
             color_scheme="blue",
             # on_click=...,
         ),
-        # flex properties
+        # ====== FLEX PROPERTIES =======
         direction="column",
-        spacing="4",
+        spacing="3",
         justify_content="center",
+        class_name="p-10",
         align_items="center",
         height="100vh",  # Use viewport height to fill the screen vertically
         width="100vw",
     )
 
 
-app = rx.App()
+app = rx.App(
+    theme=rx.theme(
+        appearance="inherit",
+        has_background=True,
+        radius="large",
+        accent_color="gold",
+    )
+)
 app.add_page(home, "/")
 app.add_page(problem, "/problem")
 app.add_page(question_1, "/question-1")
