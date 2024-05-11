@@ -265,7 +265,13 @@ def summary() -> rx.Component:
         ),
         rx.text("Hear goes the summary"),
         previous_button(goto="question-5"),
-        # -----------------
+        # TODO: Button to save as pdf / txt
+        rx.button(
+            "Save answers",
+            size="2",
+            color_scheme="blue",
+            # on_click=...,
+        ),
         # flex properties
         # -----------------
         direction="column",
