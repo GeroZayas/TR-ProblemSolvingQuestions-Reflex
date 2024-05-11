@@ -56,8 +56,23 @@ class TextAreasState(rx.State):
     question_4_text: str = ""
     question_5_text: str = ""
 
-    def set_text(self, new_text: str):
-        self.text = new_text
+    def set_text_problem_text(self, new_text: str):
+        self.problem_text = new_text
+
+    def set_text_question_1_text(self, new_text: str):
+        self.question_1_text = new_text
+
+    def set_text_question_2_text(self, new_text: str):
+        self.question_2_text = new_text
+
+    def set_text_question_3_text(self, new_text: str):
+        self.question_3_text = new_text
+
+    def set_text_question_4_text(self, new_text: str):
+        self.question_4_text = new_text
+
+    def set_text_question_5_text(self, new_text: str):
+        self.question_5_text = new_text
 
 
 # ===================================================================
