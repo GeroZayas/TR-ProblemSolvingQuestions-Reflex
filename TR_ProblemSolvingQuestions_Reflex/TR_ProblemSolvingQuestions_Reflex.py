@@ -349,6 +349,16 @@ def summary() -> rx.Component:
     )
 
 
+dict_questions_answers = {
+    "Problem": TextAreasState.problem_text,
+    "What is great about this problem?": TextAreasState.question_1_text,
+    "What is not perfect yet?": TextAreasState.question_2_text,
+    "What am I willing to do to make it the way I want it?": TextAreasState.question_3_text,
+    "What am I willing to no longer do in order to make it the way I want it?": TextAreasState.question_4_text,
+    "How can I enjoy the process while I do what is necessary to make it the way I want it?": TextAreasState.question_5_text,
+}
+
+
 app = rx.App(
     theme=rx.theme(
         appearance="inherit",
