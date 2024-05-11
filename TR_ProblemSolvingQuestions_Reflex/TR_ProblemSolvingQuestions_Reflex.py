@@ -332,7 +332,6 @@ def summary() -> rx.Component:
         ),
         rx.text(TextAreasState.question_5_text),
         # ====== Buttons =======
-        previous_button(goto="question-5"),
         rx.button(
             "Save answers",
             size="2",
