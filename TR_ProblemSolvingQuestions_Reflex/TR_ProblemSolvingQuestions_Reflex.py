@@ -58,7 +58,7 @@ class State(rx.State):
 
 
 def home() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             "Problem Solving Questions",
             size="9",
@@ -80,8 +80,15 @@ def home() -> rx.Component:
             size="3",
         ),
         rx.link("Made by Gero Zayas", href="https://www.gerozayas.com"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="6",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -89,7 +96,7 @@ def home() -> rx.Component:
 # PROBLEM Page
 # ===================================================================
 def problem() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             "What is the problem?",
             size="8",
@@ -98,8 +105,15 @@ def problem() -> rx.Component:
         ),
         user_answer_entry(id="problem", name="problem"),
         next_button(goto="question-1"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -107,7 +121,7 @@ def problem() -> rx.Component:
 # Question 1 Page
 # ===================================================================
 def question_1() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             rx.text("I.", color_scheme="red"),
             "What is great about this problem?",
@@ -118,8 +132,15 @@ def question_1() -> rx.Component:
         user_answer_entry(id="question_1", name="question_1"),
         next_button(goto="question-2"),
         previous_button(goto="problem"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -127,7 +148,7 @@ def question_1() -> rx.Component:
 # Question 2 Page
 # ===================================================================
 def question_2() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             rx.text("II.", color_scheme="red"),
             "What is not perfect yet?",
@@ -138,8 +159,15 @@ def question_2() -> rx.Component:
         user_answer_entry(id="question_2", name="question_2"),
         next_button(goto="question-3"),
         previous_button(goto="question-1"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -147,7 +175,7 @@ def question_2() -> rx.Component:
 # Question 3 Page
 # ===================================================================
 def question_3() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             rx.text("III.", color_scheme="red"),
             "What am I willing to do to make it the way I want it?",
@@ -158,8 +186,15 @@ def question_3() -> rx.Component:
         user_answer_entry(id="question_3", name="question_3"),
         next_button(goto="question-4"),
         previous_button(goto="question-2"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -167,7 +202,7 @@ def question_3() -> rx.Component:
 # Question 4 Page
 # ===================================================================
 def question_4() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             rx.text("IV.", color_scheme="red"),
             "What am I willing to no longer do in order to make it the way I want it?",
@@ -178,8 +213,15 @@ def question_4() -> rx.Component:
         user_answer_entry(id="question_4", name="question_4"),
         next_button(goto="question-5"),
         previous_button(goto="question-3"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -187,7 +229,7 @@ def question_4() -> rx.Component:
 # Question 5 Page
 # ===================================================================
 def question_5() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             rx.text("V.", color_scheme="red"),
             "How can I enjoy the process while I do what is necessary to make it the way I want it?",
@@ -198,8 +240,15 @@ def question_5() -> rx.Component:
         user_answer_entry(id="question_5", name="question_5"),
         next_button(goto="summary"),
         previous_button(goto="question-4"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
@@ -207,16 +256,24 @@ def question_5() -> rx.Component:
 # Summary Page
 # ===================================================================
 def summary() -> rx.Component:
-    return rx.center(
+    return rx.flex(
         rx.heading(
             "SUMMARY",
             size="8",
             color_scheme="amber",
             align="center",
         ),
+        rx.text("Hear goes the summary"),
         previous_button(goto="question-5"),
+        # -----------------
+        # flex properties
+        # -----------------
         direction="column",
         spacing="4",
+        justify_content="center",
+        align_items="center",
+        height="100vh",  # Use viewport height to fill the screen vertically
+        width="100vw",
     )
 
 
