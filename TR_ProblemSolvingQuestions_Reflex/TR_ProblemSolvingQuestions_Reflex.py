@@ -126,7 +126,11 @@ def problem() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="problem", name="problem"),
+        # user_answer_entry(id="problem", name="problem"),
+        rx.text_area(
+            value=TextAreasState.problem_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_problem_text,
+        ),
         next_button(goto="question-1"),
         # -----------------
         # flex properties
@@ -152,7 +156,10 @@ def question_1() -> rx.Component:
             color_scheme="amber",
             align="center",
         ),
-        user_answer_entry(id="question_1", name="question_1"),
+        rx.text_area(
+            value=TextAreasState.question_1_text,  # Bind the text area value to the state variable
+            on_change=TextAreasState.set_text_question_1_text,
+        ),
         next_button(goto="question-2"),
         previous_button(goto="problem"),
         # -----------------
