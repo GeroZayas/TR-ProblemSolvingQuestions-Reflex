@@ -18,6 +18,7 @@ def next_button(goto):
             size="3",
             color_scheme="amber",
             on_click=lambda: rx.redirect(f"/{goto}"),
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
     )
 
@@ -29,24 +30,8 @@ def previous_button(goto):
             size="2",
             color_scheme="red",
             on_click=lambda: rx.redirect(f"/{goto}"),
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
-    )
-
-
-def user_answer_entry(
-    id,
-    name,
-):
-    return rx.text_area(
-        placeholder="Enter answer...",
-        # id=f"{id}",
-        name=f"{name}",
-        color_scheme="amber",
-        radius="medium",
-        required=True,
-        size="3",
-        # value=id.text,
-        # on_change=TextAreasState.set_text,
     )
 
 
@@ -141,6 +126,7 @@ def home() -> rx.Component:
             on_click=lambda: rx.redirect("/problem"),
             color_scheme="amber",
             size="3",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         rx.link("Made by Gero Zayas", href="https://www.gerozayas.com"),
         # -----------------
@@ -171,6 +157,7 @@ def problem() -> rx.Component:
             value=TextAreasState.problem_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_problem_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="question-1"),
         # -----------------
@@ -202,6 +189,7 @@ def question_1() -> rx.Component:
             value=TextAreasState.question_1_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_1_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="question-2"),
         previous_button(goto="problem"),
@@ -234,6 +222,7 @@ def question_2() -> rx.Component:
             value=TextAreasState.question_2_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_2_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="question-3"),
         previous_button(goto="question-1"),
@@ -266,6 +255,7 @@ def question_3() -> rx.Component:
             value=TextAreasState.question_3_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_3_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="question-4"),
         previous_button(goto="question-2"),
@@ -298,6 +288,7 @@ def question_4() -> rx.Component:
             value=TextAreasState.question_4_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_4_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="question-5"),
         previous_button(goto="question-3"),
@@ -330,6 +321,7 @@ def question_5() -> rx.Component:
             value=TextAreasState.question_5_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_5_text,
             rows="6",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         next_button(goto="summary"),
         previous_button(goto="question-4"),
@@ -387,6 +379,7 @@ def summary() -> rx.Component:
             size="2",
             color_scheme="blue",
             on_click=DownloadState.download_dict,
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         rx.button(
             "Start again with new problem",
@@ -396,6 +389,7 @@ def summary() -> rx.Component:
                 rx.redirect("/problem"),
                 TextAreasState.reset_all(),
             ],
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         # ====== FLEX PROPERTIES =======
         direction="column",
