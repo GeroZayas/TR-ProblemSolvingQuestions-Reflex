@@ -81,6 +81,14 @@ class TextAreasState(rx.State):
     def set_text_question_5_text(self, new_text: str):
         self.question_5_text = new_text
 
+    def reset_all(self):
+        self.problem_text = ""
+        self.question_1_text = ""
+        self.question_2_text = ""
+        self.question_3_text = ""
+        self.question_4_text = ""
+        self.question_5_text = ""
+
 
 class DownloadState(rx.State):
     def download_dict(self):
@@ -386,6 +394,7 @@ def summary() -> rx.Component:
             color_scheme="red",
             on_click=lambda: [
                 rx.redirect("/problem"),
+                TextAreasState.reset_all(),
             ],
         ),
         # ====== FLEX PROPERTIES =======
