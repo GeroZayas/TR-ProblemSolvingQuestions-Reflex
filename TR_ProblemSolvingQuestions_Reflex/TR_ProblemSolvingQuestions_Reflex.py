@@ -4,6 +4,11 @@ from rxconfig import config
 
 import reflex as rx
 
+import datetime
+
+now = datetime.datetime.now()
+formatted_now = now.strftime("%Y-%m-%d %H:%M")
+
 
 # BUTTONS
 def next_button(goto):
@@ -75,6 +80,31 @@ class TextAreasState(rx.State):
 
     def set_text_question_5_text(self, new_text: str):
         self.question_5_text = new_text
+
+
+class DownloadState(rx.State):
+    def download_dict(self):
+        # FIXME: This is not downloading correctly
+        dict_questions_answers = f"""
+            "Problem",
+            {TextAreasState.problem_text},
+            "What is great about this problem?",
+            {TextAreasState.question_1_text},
+            "What is not perfect yet?",
+            {TextAreasState.question_2_text},
+            "What am I willing to do to make it the way I want it?",
+            {TextAreasState.question_3_text},
+            "What am I willing to no longer do in order to make it the way I want it?",
+            {TextAreasState.question_4_text},
+            "How can I enjoy the process while I do what is necessary to make it the way I want it?",
+            {TextAreasState.question_5_text},
+            """
+        # Convert dictionary to JSON string
+        # dict_str = str(dict_questions_answers)
+        return rx.download(
+            data=dict_questions_answers,
+            filename=f"Problem Solving Questions {formatted_now}.txt",
+        )
 
 
 # ===================================================================
@@ -336,7 +366,7 @@ def summary() -> rx.Component:
             "Save answers",
             size="2",
             color_scheme="blue",
-            # on_click=...,
+            on_click=DownloadState.download_dict,
         ),
         # ====== FLEX PROPERTIES =======
         direction="column",
@@ -347,16 +377,6 @@ def summary() -> rx.Component:
         height="100vh",  # Use viewport height to fill the screen vertically
         width="100vw",
     )
-
-
-dict_questions_answers = {
-    "Problem": TextAreasState.problem_text,
-    "What is great about this problem?": TextAreasState.question_1_text,
-    "What is not perfect yet?": TextAreasState.question_2_text,
-    "What am I willing to do to make it the way I want it?": TextAreasState.question_3_text,
-    "What am I willing to no longer do in order to make it the way I want it?": TextAreasState.question_4_text,
-    "How can I enjoy the process while I do what is necessary to make it the way I want it?": TextAreasState.question_5_text,
-}
 
 
 app = rx.App(
