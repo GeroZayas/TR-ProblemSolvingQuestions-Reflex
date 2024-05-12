@@ -138,12 +138,12 @@ def home() -> rx.Component:
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="6",
-        justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -162,17 +162,19 @@ def problem() -> rx.Component:
         rx.text_area(
             value=TextAreasState.problem_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_problem_text,
+            rows="6",
         ),
         next_button(goto="question-1"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -191,18 +193,20 @@ def question_1() -> rx.Component:
         rx.text_area(
             value=TextAreasState.question_1_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_1_text,
+            rows="6",
         ),
         next_button(goto="question-2"),
         previous_button(goto="problem"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -221,18 +225,20 @@ def question_2() -> rx.Component:
         rx.text_area(
             value=TextAreasState.question_2_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_2_text,
+            rows="6",
         ),
         next_button(goto="question-3"),
         previous_button(goto="question-1"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -251,18 +257,20 @@ def question_3() -> rx.Component:
         rx.text_area(
             value=TextAreasState.question_3_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_3_text,
+            rows="6",
         ),
         next_button(goto="question-4"),
         previous_button(goto="question-2"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -281,18 +289,20 @@ def question_4() -> rx.Component:
         rx.text_area(
             value=TextAreasState.question_4_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_4_text,
+            rows="6",
         ),
         next_button(goto="question-5"),
         previous_button(goto="question-3"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -311,18 +321,20 @@ def question_5() -> rx.Component:
         rx.text_area(
             value=TextAreasState.question_5_text,  # Bind the text area value to the state variable
             on_change=TextAreasState.set_text_question_5_text,
+            rows="6",
         ),
         next_button(goto="summary"),
         previous_button(goto="question-4"),
         # -----------------
         # flex properties
         # -----------------
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         direction="column",
         spacing="4",
         justify_content="center",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
+        # height="100vh",  # Use viewport height to fill the screen vertically
+        # width="100vw",
     )
 
 
@@ -368,14 +380,20 @@ def summary() -> rx.Component:
             color_scheme="blue",
             on_click=DownloadState.download_dict,
         ),
+        rx.button(
+            "Start again with new problem",
+            size="2",
+            color_scheme="red",
+            on_click=lambda: [
+                rx.redirect("/problem"),
+            ],
+        ),
         # ====== FLEX PROPERTIES =======
         direction="column",
         spacing="3",
         justify_content="center",
-        class_name="p-10",
+        class_name="text-sm sm:text-base md:text-lg lg:text-xl p-10",
         align_items="center",
-        height="100vh",  # Use viewport height to fill the screen vertically
-        width="100vw",
     )
 
 
