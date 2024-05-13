@@ -119,6 +119,7 @@ def home() -> rx.Component:
             width="200px",
             height="auto",
             border_radius="15px 50px",
+            class_name="shadow-md hover:shadow-lg transition duration-150 ease-in-out",
         ),
         rx.button(
             rx.icon(tag="notebook-pen"),
