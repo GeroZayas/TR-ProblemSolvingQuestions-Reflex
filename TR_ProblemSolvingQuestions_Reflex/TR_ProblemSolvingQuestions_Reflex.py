@@ -4,11 +4,6 @@ from rxconfig import config
 
 import reflex as rx
 
-import datetime
-
-now = datetime.datetime.now()
-formatted_now = now.strftime("%Y-%m-%d %H:%M")
-
 
 # BUTTONS
 def next_button(goto):
@@ -92,6 +87,10 @@ class DownloadState(rx.State):
             "How can I enjoy the process while I do what is necessary to make it the way I want it?",
             {TextAreasState.question_5_text},
             """
+        import datetime
+
+        now = datetime.datetime.now()
+        formatted_now = now.strftime("%Y-%m-%d %H:%M")
         # Convert dictionary to JSON string
         # dict_str = str(dict_questions_answers)
         return rx.download(
